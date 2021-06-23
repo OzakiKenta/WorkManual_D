@@ -1,0 +1,265 @@
+﻿@{ ViewBag.Title = "Main Menu"; }
+
+<div class="container body-content">
+    <main id="vueMenu">
+        <div class="row mt-2">
+            <div class="col-12">
+                <h4>
+                    ◆基本情報-点検項目登録
+                </h4>
+            </div>
+            <div class="col-12">
+                <div class="p-2" style="border:2px solid gray;border-radius:5px;width:360px">
+                    <button data-toggle="modal" data-target="#ModalBaseDataCreate"
+                            type="button" class="btn btn-primary w-100">
+                        新規作成
+                    </button>
+                    <button data-toggle="modal" data-target="#ModalBaseDataRevised"
+                            type="button" class="btn btn-primary w-100 mt-3">
+                        改定
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="ModalBaseDataCreate" tabindex="-1" aria-labelledby="exampleModalLabel">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header  bg-primary text-white">
+                        <h5 class="modal-title" id="exampleModalLabel">新規作成</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-4 text-right">
+                                    <label class="col-form-label">区分：</label>
+                                </div>
+                                <div class="col-lg-8">
+                                    <select class="form-control ">
+                                        <option value=""></option>
+                                        <option value="1">区分1</option>
+                                        <option value="2">区分2</option>
+                                        <option value="3">区分3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 text-right">
+                                    <label class="col-form-label">管理No：</label>
+                                </div>
+                                <div class="col-lg-8">
+                                    <select class="form-control ">
+                                        <option value=""></option>
+                                        <option value="1">管理No1</option>
+                                        <option value="2">管理No2</option>
+                                        <option value="3">管理No3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 text-right">
+                                    <label class="col-form-label">ライン名：</label>
+                                </div>
+                                <div class="col-lg-8">
+                                    <select class="form-control ">
+                                        <option value=""></option>
+                                        <option value="1">ライン名1</option>
+                                        <option value="2">ライン名2</option>
+                                        <option value="3">ライン名3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 text-right">
+                                    <label class="col-form-label">工程名：</label>
+                                </div>
+                                <div class="col-lg-8">
+                                    <select class="form-control ">
+                                        <option value=""></option>
+                                        <option value="1">工程名1</option>
+                                        <option value="2">工程名2</option>
+                                        <option value="3">工程名3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 text-right">
+                                    <label class="col-form-label">ステーション名：</label>
+                                </div>
+                                <div class="col-lg-8">
+                                    <select class="form-control ">
+                                        <option value=""></option>
+                                        <option value="1">ステーション名1</option>
+                                        <option value="2">ステーション名2</option>
+                                        <option value="3">ステーション名3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 text-right">
+                                    <label class="col-form-label">名称：</label>
+                                </div>
+                                <div class="col-lg-8">
+                                    <select class="form-control ">
+                                        <option value=""></option>
+                                        <option value="1">名称1</option>
+                                        <option value="2">名称2</option>
+                                        <option value="3">名称3</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <button type="button" class="btn btn-danger btn-modal-menu" data-dismiss="modal">閉じる</button>
+                                </div>
+                                <div class="col-lg-6 text-right">
+                                    <a href="@Url.Action("Report","BaseData")"
+                                       class="btn btn-primary btn-modal-menu">作成</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal -->
+        <div class="modal fade" id="ModalBaseDataRevised" tabindex="-1" aria-labelledby="exampleModalLabel">
+            <div class="modal-dialog modal-xl" style="max-width:90%">
+                <div class="modal-content">
+                    <div class="modal-header  bg-primary text-white">
+                        <h5 class="modal-title" id="exampleModalLabel">新規作成</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-4 text-right">
+                                    <label class="col-form-label">ライン名：</label>
+                                </div>
+                                <div class="col-lg-8">
+                                    <select class="form-control ">
+                                        <option value=""></option>
+                                        <option value="1">ライン名1</option>
+                                        <option value="2">ライン名2</option>
+                                        <option value="3">ライン名3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 text-right">
+                                    <label class="col-form-label">工程名：</label>
+                                </div>
+                                <div class="col-lg-8">
+                                    <select class="form-control ">
+                                        <option value=""></option>
+                                        <option value="1">工程名1</option>
+                                        <option value="2">工程名2</option>
+                                        <option value="3">工程名3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 text-right">
+                                    <label class="col-form-label">ステーション名：</label>
+                                </div>
+                                <div class="col-lg-8">
+                                    <select class="form-control ">
+                                        <option value=""></option>
+                                        <option value="1">区分1</option>
+                                        <option value="2">区分2</option>
+                                        <option value="3">区分3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 text-right">
+                                    <label class="col-form-label">区分：</label>
+                                </div>
+                                <div class="col-lg-8">
+                                    <select class="form-control ">
+                                        <option value=""></option>
+                                        <option value="1">区分1</option>
+                                        <option value="2">区分2</option>
+                                        <option value="3">区分3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <table class="table table-sm table-bordered" style="table-layout:fixed">
+                                    <thead class="bg-primary text-white">
+                                        <tr>
+                                            <th style="width:70px"></th>
+                                            <th>ライン名</th>
+                                            <th>工程名</th>
+                                            <th>ステーション名</th>
+                                            <th>区分</th>
+                                            <th>管理No</th>
+                                            <th>名称</th>
+                                            <th>制定年月日</th>
+                                            <th>作成年月日</th>
+                                            <th>作成者</th>
+                                            <th>承認者</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <a href="@Url.Action("Report","BaseData")"
+                                                   class="btn btn-primary btn-sm w-100">改定</a>
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <button type="button" class="btn btn-danger btn-modal-menu" data-dismiss="modal">閉じる</button>
+                                </div>
+                                <div class="col-lg-6 text-right">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal -->
+    </main>
+</div>
+
+@section scripts {
+    <script>
+        new Vue({
+            el: '#vueMenu',
+            data: {
+            },
+            methods: {
+            },
+        });
+    </script>
+
+}

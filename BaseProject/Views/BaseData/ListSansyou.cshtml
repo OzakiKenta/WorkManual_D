@@ -1,0 +1,124 @@
+﻿@{ ViewBag.Title = "Main Menu"; }
+
+<div class="container body-content">
+    <main id="vueMenu">
+        @*--------------------------------基本情報--------------------------------*@
+        <div class="row m-2 ">
+            <div class="col-12">
+                <h4>◆検索</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 text-right">
+                <label class="col-form-label">ライン名：</label>
+            </div>
+            <div class="col-lg-8">
+                <select class="form-control ">
+                    <option value=""></option>
+                    <option value="1">区分1</option>
+                    <option value="2">区分2</option>
+                    <option value="3">区分3</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 text-right">
+                <label class="col-form-label">工程名：</label>
+            </div>
+            <div class="col-lg-8">
+                <select class="form-control ">
+                    <option value=""></option>
+                    <option value="1">区分1</option>
+                    <option value="2">区分2</option>
+                    <option value="3">区分3</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 text-right">
+                <label class="col-form-label">ステーション名：</label>
+            </div>
+            <div class="col-lg-8">
+                <select class="form-control ">
+                    <option value=""></option>
+                    <option value="1">区分1</option>
+                    <option value="2">区分2</option>
+                    <option value="3">区分3</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 text-right">
+                <label class="col-form-label">区分：</label>
+            </div>
+            <div class="col-lg-8">
+                <select class="form-control ">
+                    <option value=""></option>
+                    <option value="1">区分1</option>
+                    <option value="2">区分2</option>
+                    <option value="3">区分3</option>
+                </select>
+            </div>
+        </div>
+        <hr />
+        <div class="row mt-2">
+            <table class="table table-sm table-bordered" style="table-layout:fixed">
+                <thead class="bg-primary text-white">
+                    <tr>
+                        <th style="width:70px"></th>
+                        <th>ライン名</th>
+                        <th>工程名</th>
+                        <th>ステーション名</th>
+                        <th>区分</th>
+                        <th>管理No</th>
+                        <th>名称</th>
+                        <th>制定年月日</th>
+                        <th>作成年月日</th>
+                        <th>作成者</th>
+                        <th>承認者</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="@Url.Action("Report","BaseData")"
+                               class="btn btn-primary btn-sm w-100">参照</a>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div>
+
+@section style {
+    <style>
+        .col-form-middle {
+            min-width: 200px;
+            max-width: 200px;
+        }
+    </style>
+
+}
+@section scripts {
+    <script>
+        new Vue({
+            el: '#vueMenu',
+            data: {
+            },
+            methods: {
+            },
+        });
+    </script>
+
+}

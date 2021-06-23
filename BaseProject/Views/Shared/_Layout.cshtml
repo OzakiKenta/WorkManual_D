@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 日常点検チェックシート</title>
+    <link href="~/Content/bootstrap-custom.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    @RenderSection("style", required: false)
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg  navbar-light bg-primary">
+        <span class="navbar-brand text-white" >日常点検チェックシート</span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link text-white" href="@Url.Action("Index","MainMenu")">ホーム</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        記録・保管
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="@Url.Action("CreateMenu","RecordSaveData")">点検開始</a>
+                        <a class="dropdown-item" href="@Url.Action("ListShonin","RecordSaveData")">承認</a>
+                        <a class="dropdown-item" href="@Url.Action("ListSansyou","RecordSaveData")">探す</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        基本情報
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="@Url.Action("CreateMenu","BaseData")">
+                            点検項目登録
+                        </a>
+                        <a class="dropdown-item" href="@Url.Action("ListShonin","BaseData")">承認</a>
+                        <a class="dropdown-item" href="@Url.Action("ListSansyou","BaseData")">探す</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    @RenderBody()
+    <script src="~/Scripts/function.js"></script>
+    <script src="~/Scripts/vue.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,392 @@
+﻿@{ ViewBag.Title = "Main Menu"; }
+
+<div class="container body-content">
+    <main id="vueMenu">
+        @*--------------------------------基本情報--------------------------------*@
+        <div class="row m-2 ">
+            <div class="col-12">
+                <h4>◆基本情報</h4>
+            </div>
+            <div class="col-lg-4 ">
+                <input type="text" class="form-control form-control-sm col-form-middle float-lg-right" value="" />
+                <label class="col-form-label col-form-label-sm float-lg-right">チェックID：</label>
+            </div>
+            <div class="col-lg-4 ">
+                <input type="text" class="form-control form-control-sm col-form-middle float-lg-right" value="" />
+                <label class="col-form-label col-form-label-sm float-lg-right">管理No：</label>
+            </div>
+            <div class="col-lg-4">
+                <input type="text" class="form-control form-control-sm col-form-middle float-lg-right" value="" />
+                <label class="col-form-label col-form-label-sm float-lg-right">承認者：</label>
+            </div>
+        </div>
+        <div class="row m-2 ">
+            <div class="col-lg-4 ">
+                <select type="text" class="form-control form-control-sm col-form-middle float-lg-right">
+                    <option value=""></option>
+                </select>
+                <label class="col-form-label col-form-label-sm float-lg-right">区分：</label>
+            </div>
+            <div class="col-lg-4 ">
+                <input type="text" class="form-control form-control-sm col-form-middle float-lg-right" value="" />
+                <label class="col-form-label col-form-label-sm float-lg-right">Version：</label>
+            </div>
+            <div class="col-lg-4">
+                <input type="text" class="form-control form-control-sm col-form-middle float-lg-right" value="" />
+                <label class="col-form-label col-form-label-sm float-lg-right">承認日：</label>
+            </div>
+        </div>
+        <div class="row m-2 ">
+            <div class="col-lg-4 ">
+            </div>
+            <div class="col-lg-4 ">
+                <input type="text" class="form-control form-control-sm col-form-middle float-lg-right" value="" />
+                <label class="col-form-label col-form-label-sm float-lg-right">制定年月日：</label>
+            </div>
+            <div class="col-lg-4">
+                <input type="text" class="form-control form-control-sm col-form-middle float-lg-right" value="" />
+                <label class="col-form-label col-form-label-sm float-lg-right">作成者：</label>
+            </div>
+        </div>
+        <div class="row m-2 ">
+            <div class="col-lg-4 ">
+            </div>
+            <div class="col-lg-4 ">
+            </div>
+            <div class="col-lg-4">
+                <input type="text" class="form-control form-control-sm col-form-middle float-lg-right" value="" />
+                <label class="col-form-label col-form-label-sm float-lg-right">作成日：</label>
+            </div>
+        </div>
+        @*--------------------------------基本情報--------------------------------*@
+        <div class="row m-2 ">
+            <div class="col-12">
+                <h4>◆改訂履歴</h4>
+            </div>
+            <div class="col-12 ">
+                <table class="table table-sm table-bordered">
+                    <thead>
+                        <tr>
+                            <th>改定No</th>
+                            <th>改定年月日</th>
+                            <th>改定内容</th>
+                            <th>作成者</th>
+                            <th>承認者</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        @*--------------------------------承認WF--------------------------------*@
+        <div class="row m-2 ">
+            <div class="col-12">
+                <h4>◆承認WF</h4>
+            </div>
+            <div class="col-12 ">
+                <table class="table table-sm table-bordered" style="max-width:500px">
+                    <tr>
+                        <td></td>
+                        <th>担当者</th>
+                        <th>作業日時</th>
+                    </tr>
+                    <tr>
+                        <th>承認者</th>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>作成者</th>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        @*--------------------------------承認WF--------------------------------*@
+        <div class="row m-2 ">
+            <div class="col-lg-6 ">
+                <button type="button"
+                        class="btn btn-primary btn-modal-menu">
+                    一時保存
+                </button>
+                <button type="button"
+                        class="btn btn-success btn-modal-menu">
+                    承認依頼
+                </button>
+            </div>
+            <div class="col-lg-6 text-lg-right">
+                <button v-on:click="OpenModalTenkenhyo"
+                        type="button"
+                        class="btn btn-primary btn-modal-menu">
+                    次へ
+                </button>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="ModalTenkenhyo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <form id="FormModalKaitei">
+                <div class="modal-dialog" role="document" style="max-width:100%;width:100%;margin:0px;height:100vh">
+                    <div class="modal-content" style="min-height:100vh">
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <div class="row mb-3">
+                                    <img src="~/Content/resource/img/icon/rogo.png" width="300px"/>
+                                    <div class="col-12 text-center "><span class="display-4" style="letter-spacing:20px">日常点検票</span></div>
+                                </div>
+                                <div class="row m-0 p-0">
+                                    <div class="col-1"></div>
+                                    <div class="col-10 ">
+                                        <table class="table table-sm table-bordered m-0" style="border:none;table-layout:fixed">
+                                            <tr>
+                                                <th style="border:none;width:2%"></th>
+                                                <th style="border:none;width:35%"></th>
+                                                <th class="text-right bg-textbg-1"
+                                                    style="border:none;width:35%">改定　　　　　　　　　年　　　　　　月　　　　　　日</th>
+                                                <th class="bg-textbg-2" style="width:14%">承認</th>
+                                                <th class="bg-textbg-2" style="width:14%">作成</th>
+                                            </tr>
+                                            <tr>
+                                                <th style="border:none;"></th>
+                                                <th class="text-left bg-textbg-1">資産管理No:</th>
+                                                <th class="text-left bg-textbg-1">機械名:</th>
+                                                <th rowspan="2"></th>
+                                                <th rowspan="2"></th>
+                                            </tr>
+                                            <tr style="height:70px">
+                                                <th style="border:none;"></th>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="row m-0 p-0">
+                                    <div class="col-1" style=" -ms-writing-mode: tb-rl; writing-mode: vertical-rl;">《経路》保全台頭部署→使用部署（または保全担当部署）</div>
+                                    <div class="col-10">
+                                        <table class="table table-sm table-bordered m-0" style="border:none;table-layout:fixed;">
+                                            <tr v-on:click="OpenModalEditTenkenDataList"
+                                                style="cursor:pointer">
+                                                <th style="border:none;width:2%"></th>
+                                                <th class="bg-textbg-1" style="width:5%">分<br />類</th>
+                                                <th class="bg-textbg-1">点検項目</th>
+                                                <th class="bg-textbg-1">判定基準</th>
+                                                <th class="bg-textbg-1" style="width:20%">方法</th>
+                                                <th class="bg-textbg-1" style="width:4%">周<br />期</th>
+                                                <th class="bg-textbg-1" style="width:4%">担<br />当</th>
+                                            </tr>
+                                            <tr v-for="(r,i) in TenkenData.DataList"
+                                                style="height:50px">
+                                                <td class="text-right"
+                                                    style="border:none;padding-top:14px">
+                                                    <span v-html="i+1"></span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="row m-0 p-0">
+                                    <div class="col-1"></div>
+                                    <div class="col-10">
+                                        <table class="table table-sm table-bordered m-0" style="border:none;table-layout:fixed">
+                                            <tr>
+                                                <th style="border:none;width:2%"></th>
+                                                <th class="bg-textbg-1"
+                                                    style="width:70%"
+                                                    colspan="2">改定内容</th>
+                                                <th class="bg-textbg-1" style="width:14%">改定日</th>
+                                                <th class="bg-textbg-1" style="width:14%">改正者</th>
+                                            </tr>
+                                            <tr v-for="(r,i) in TenkenData.KaiteiList"
+                                                style="height:50px">
+                                                <td class="text-right"
+                                                    style="border:none;padding-top:14px">
+                                                    <span v-html="i+1"></span>
+                                                <td style="width:2%"></td>
+                                                <td style="width:68%"></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="row m-0 p-0">
+                                    <div class="col-1"></div>
+                                    <div class="col-10">
+                                        〔記入上の注意事項(分類)〕<br />
+                                        故……故障に直接関係するもの　安……安全に直接関係するもの<br />
+                                        品……品質　　　”　　　　　　公……公害　　　”
+                                    </div>
+                                </div>
+                                <div class="row m-0 p-0">
+                                    <div class="col-1"></div>
+                                    <div class="col-10 text-right">
+                                        技0333 (0.9改)TPM推進　A4　中質
+                                    </div>
+                                </div>
+                                <div class="row m-0 p-0">
+                                    <div class="col-1"></div>
+                                    <div class="col-10 text-center">
+                                        <span class="h4">品質と安全のデンソー</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-6 text-left">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal" style="min-width:120px">閉じる</button>
+                                    </div>
+                                    <div class="col-6 text-right">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--End-->
+        <!-- Modal -->
+        <div class="modal fade" id="ModalEditTenkenDataList" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <form id="FormModalKaitei">
+                <div class="modal-dialog modal-xl" role="document" style="max-width:90%">
+                    <div class="modal-content">
+                        <div class="modal-header bg-primary text-white">
+                            <h5 class="modal-title" id="exampleModalLabel">点検項目</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container-fluid">
+
+                                <div class="row mt-2">
+                                    <table class="table table-sm table-bordered m-0" style="border:none;table-layout:fixed;">
+                                        <tr v-on:click="OpenModalEditTenkenDataList"
+                                            class="bg-primary text-white"
+                                            style="cursor:pointer">
+                                            <th class="" style="width:5%">No</th>
+                                            <th class="" style="width:5%">分類</th>
+                                            <th class="">点検項目</th>
+                                            <th class="">判定基準</th>
+                                            <th class="" style="width:20%">方法</th>
+                                            <th class="" style="width:6%">周期</th>
+                                            <th class="" style="width:6%">担当</th>
+                                            <th class="" style="width:5%">画像</th>
+                                            <th class="" style="width:5%">動画</th>
+                                            <th class="" style="width:10%">行操作</th>
+                                        </tr>
+                                        <tr v-for="(r,i) in TenkenData.DataList"
+                                            style="height:30px">
+                                            <td class="text-right">
+                                                <span v-html="i+1"></span>
+                                            </td>
+                                            <td>
+                                                <select class="form-control form-control-sm">
+                                                    <option></option>
+                                                </select>
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><label class="btn btn-sm w-100 btn-primary">選択</label></td>
+                                            <td><label class="btn btn-sm w-100 btn-primary">選択</label></td>
+                                            <td>
+                                                <button type="button"
+                                                        class="btn btn-sm  btn-success"
+                                                        style="width:48%">
+                                                    選択
+                                                </button>
+                                                <button type="button"
+                                                        class="btn btn-sm  btn-danger"
+                                                        style="width:48%">
+                                                    削除
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-6 text-left">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal" style="min-width:120px">閉じる</button>
+                                    </div>
+                                    <div class="col-6 text-right">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--End-->
+    </main>
+</div>
+
+@section style {
+    <style>
+        .col-form-middle {
+            min-width: 200px;
+            max-width: 200px;
+        }
+
+        .bg-textbg-1 {
+            
+            background-color: #fff352;
+        }
+
+        .bg-textbg-2 {
+            background-color: #e3acae;
+        }
+    </style>
+
+}
+@section scripts {
+    <script>
+        new Vue({
+            el: '#vueMenu',
+            data: {
+                TenkenData: {
+                    DataList: [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {},],
+                    KaiteiList: [{}, {}, {}, {},],
+                }
+            },
+            methods: {
+                OpenModalTenkenhyo: function () {
+                    $('#ModalTenkenhyo').modal()
+                },
+                OpenModalEditTenkenDataList: function () {
+                    $('#ModalEditTenkenDataList').modal()
+                },
+            },
+        });
+        window.addEventListener('load', function () {
+            $('#ModalEditTenkenDataList').on('hide.bs.modal', function () {
+                $('#ModalTenkenhyo').css('overflow-y','scroll')
+            })
+        });
+    </script>
+
+}

@@ -1,0 +1,81 @@
+﻿@{ ViewBag.Title = "Main Menu"; }
+
+<div class="container body-content">
+    <main id="vueMenu">
+        <div class="row mt-2 jumbotron bg-white pt-3 pb-3 " style="border:2px solid gray">
+            <div class="col-12">
+                <h4>記録・保管</h4>
+            </div>
+            <div class="col-lg-4" v-for="row in KirokuMenuList">
+                <div class="card img-thumbnail" style="min-height:100%">
+                    <img class="card-img-top" v-bind:src="row.src" style="height:120px">
+                    <div class="card-body px-2 py-3">
+                        <h5 class="card-title" v-html="row.title"></h5>
+                        <p class="card-text" v-html="row.expl"></p>
+                        <p class="mb-2" style="position:absolute;bottom:0;right:0"><a v-bind:href="row.href" class="btn btn-primary btn-sm mr-2">選択</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2 jumbotron bg-white pt-3 pb-3 " style="border:2px solid gray">
+            <div class="col-12">
+                <h4>基本情報</h4>
+            </div>
+            <div class="col-lg-4" v-for="row in KihonMenuList">
+                <div class="card img-thumbnail" style="min-height:100%">
+                    <img class="card-img-top" v-bind:src="row.src" style="height:120px">
+                    <div class="card-body px-2 py-3">
+                        <h5 class="card-title" v-html="row.title"></h5>
+                        <p class="card-text" v-html="row.expl"></p>
+                        <p class="mb-2" style="position:absolute;bottom:0;right:0"><a v-bind:href="row.href" class="btn btn-primary btn-sm mr-2">選択</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+@section scripts {
+    <script>
+        new Vue({
+            el: '#vueMenu',
+            data: {
+                KihonMenuList: [{
+                    title: '点検項目登録'
+                    , expl: '機能概要：'
+                    , href: '@Url.Action("CreateMenu", "BaseData")'
+                    , src: '@Url.Content("~/Content/resource/img/thumb/menu01.jpg")'
+                },{
+                    title: '承認'
+                    , expl: '機能概要：'
+                    , href: '@Url.Action("ListShonin", "BaseData")'
+                    , src: '@Url.Content("~/Content/resource/img/thumb/menu02.jpg")'
+                },{
+                        title: '検索'
+                    , expl: '機能概要：'
+                    , href: '@Url.Action("ListSansyou", "BaseData")'
+                    , src: '@Url.Content("~/Content/resource/img/thumb/menu02.jpg")'
+                }],
+                KirokuMenuList: [{
+                    title: '点検開始'
+                    , expl: '機能概要：'
+                    , href: '@Url.Action("CreateMenu", "RecordSaveData")'
+                    , src: '@Url.Content("~/Content/resource/img/thumb/menu01.jpg")'
+                },{
+                    title: '承認'
+                    , expl: '機能概要：'
+                    , href: '@Url.Action("ListShonin", "RecordSaveData")'
+                    , src: '@Url.Content("~/Content/resource/img/thumb/menu02.jpg")'
+                },{
+                        title: '探す'
+                    , expl: '機能概要：'
+                    , href: '@Url.Action("ListSansyou", "RecordSaveData")'
+                    , src: '@Url.Content("~/Content/resource/img/thumb/menu02.jpg")'
+                }],
+                },
+                methods: {
+                },
+            });
+    </script>
+
+}

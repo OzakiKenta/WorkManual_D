@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title </title>
+    <link href="~/Content/bootstrap-custom.css" rel="stylesheet" />
+    @RenderSection("style", required: false)
+</head>
+<body style="
+background-color: #f8dce0;
+background-image: url('@Url.Content("~/Content/resource/img/bg/bg1.jpg")')">
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    <script src="~/Scripts/vue.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
